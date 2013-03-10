@@ -8,7 +8,7 @@ class Scribe
     puts
   end
 
-  def self.situation(text)
+  def self.describe(text)
     puts "> #{text}"
   end
 

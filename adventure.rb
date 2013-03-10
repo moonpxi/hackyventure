@@ -1,7 +1,7 @@
 class Adventure
   
   def while_not_finished
-    yield "What is your name?"
+    yield Situation.new("What is your name?")
   end
 
 end
