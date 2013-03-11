@@ -7,7 +7,7 @@ class Situation
   end
 
   def resolve_with(action)
-    puts "Hi #{action}"
+    :loop
   end
   
 end

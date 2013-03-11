@@ -1,7 +1,14 @@
 class Adventure
+
+  def initialize(situations)
+    @situations = situations    
+    @current = :start
+  end
   
   def while_not_finished
-    yield Situation.new("What is your name?")
+    while @current != :end
+      @current = yield @situations[@current]
+    end
   end
 
 end
