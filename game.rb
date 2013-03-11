@@ -9,4 +9,8 @@ adventure = Adventure.new
 
 adventure.while_not_finished do |situation|
   Scribe.describe situation.description  
+
+  action = Scribe.ask
+
+  situation.resolve_with(action)
 end

@@ -9,7 +9,12 @@ class Scribe
   end
 
   def self.describe(text)
-    puts "> #{text}"
+    puts text
+  end
+
+  def self.ask
+    print "> "
+    return gets.chomp
   end
 
 end
