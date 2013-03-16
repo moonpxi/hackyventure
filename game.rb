@@ -2,6 +2,7 @@ require_relative "scribe"
 require_relative "adventure"
 require_relative "situation"
 require_relative "situations"
+require_relative "free_text_entry"
 
 
 Scribe.header "Hackyventure 0.42.35"
