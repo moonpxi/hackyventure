@@ -7,7 +7,7 @@ class Situation
   end
 
   def resolve_with(action)
-    :loop
+    { :next => :loop, :context => {} } 
   end
   
 end
