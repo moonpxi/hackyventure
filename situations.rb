@@ -7,7 +7,7 @@ class Situations
                               { :any => :loop }),
 
       :loop => Situation.new("Hi {{name}}! Loop?", 
-                             Select.options("yes" => :yes, "no" => :no), 
+                             Select.options("yes" => :yes, :other => :no), 
                              { :yes => :loop, :no => :end })
     }
   end

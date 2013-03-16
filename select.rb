@@ -9,7 +9,8 @@ class Select
   end
 
   def resolve(action)
-    Resolution.new(@options[action.downcase])
+    selected = @options.key?(action.downcase) ? action.downcase : :other
+    Resolution.new(@options[selected])
   end
 
 
