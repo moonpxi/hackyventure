@@ -6,7 +6,7 @@ class Situations
                               FreeTextEntry.for(:name), 
                               { :any => :loop }),
 
-      :loop => Situation.new("Hi :name, Loop?", 
+      :loop => Situation.new("Hi {{name}}! Loop?", 
                              Select.options("yes" => :yes, "no" => :no), 
                              { :yes => :loop, :no => :end })
     }

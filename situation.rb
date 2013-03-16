@@ -1,6 +1,6 @@
 class Situation
 
-  attr_reader :description
+  attr_reader :description, :context
 
   def initialize(description, action_resolver, next_situations)
     @description = description    

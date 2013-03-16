@@ -8,9 +8,9 @@ class Scribe
     puts
   end
 
-  def self.describe(text)
+  def self.describe(situation)
     puts
-    puts text
+    puts Mustache.render(situation.description, situation.context)
   end
 
   def self.ask
