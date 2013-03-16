@@ -9,6 +9,7 @@ class Scribe
   end
 
   def self.describe(text)
+    puts
     puts text
   end
 
