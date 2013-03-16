@@ -9,7 +9,7 @@ class Select
   end
 
   def resolve(action)
-    { :next => @options[action.downcase] }
+    Resolution.new(@options[action.downcase])
   end
 
 

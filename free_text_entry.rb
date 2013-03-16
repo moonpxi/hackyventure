@@ -9,7 +9,7 @@ class FreeTextEntry
   end
 
   def resolve(action)
-    { @key => action, :next => :any }    
+    Resolution.new(:any, @key => action)
   end
 
 end

@@ -2,6 +2,7 @@ require_relative "scribe"
 require_relative "adventure"
 require_relative "situation"
 require_relative "situations"
+require_relative "resolution"
 require_relative "free_text_entry"
 require_relative "select"
 
