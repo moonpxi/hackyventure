@@ -1,7 +1,7 @@
 class Adventure
 
-  def initialize(situations)
-    @situations = situations    
+  def initialize(story)
+    @situations = story.situations    
     @current = :start
     @context = {}
   end

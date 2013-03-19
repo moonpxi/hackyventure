@@ -1,15 +1,25 @@
 class Stories
 
-  def self.loop
-    {
-      :start => Situation.new("What is your name?", 
-                              FreeTextEntry.for(:name), 
-                              { :any => :loop }),
+  def self.dsl_loop
+    Story.named("Fancy DSL for looping") do
+      situation(:start) do
+        description "What is your name?" 
 
-      :loop => Situation.new("Hi {{name}}! Loop?", 
-                             Select.options("yes" => :yes, "no" => :no, :other => :yes), 
-                             { :yes => :loop, :no => :end })
-    }
+        free_text :name 
+        transition :any => :loop
+      end
+
+      situation(:loop) do
+        description "Hi {{name}}! Loop?"
+
+        options "yes" => :yes,
+                "no" => :no,
+                :other => :yes
+
+        transition :yes => :loop,
+                   :no => :end
+      end
+    end
   end
   
 end
