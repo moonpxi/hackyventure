@@ -1,6 +1,6 @@
-class Situations
+class Stories
 
-  def self.story
+  def self.loop
     {
       :start => Situation.new("What is your name?", 
                               FreeTextEntry.for(:name), 
