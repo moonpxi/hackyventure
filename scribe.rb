@@ -11,6 +11,9 @@ class Scribe
   def self.describe(situation)
     puts
     puts Mustache.render(situation.description, situation.context)
+    situation.options.each do |option|
+      puts "- #{option}"
+    end
   end
 
   def self.ask

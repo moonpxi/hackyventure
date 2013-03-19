@@ -18,5 +18,14 @@ class Situation
     return { :next => @next_situations[resolution.next], 
              :context => resolution.context } 
   end
+
+  def options
+    if @action_resolver.respond_to?(:options)
+      @action_resolver.options.reject { |name, action| name == :other }
+                               .map { |name, action| name }
+    else
+      []
+    end
+  end
   
 end
