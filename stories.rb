@@ -22,4 +22,12 @@ class Stories
     end
   end
   
+  def self.fight
+    Story.named("Combat") do
+      situation(:start) do
+        description "Fight will begin!!"
+      end
+    end
+  end
+  
 end
