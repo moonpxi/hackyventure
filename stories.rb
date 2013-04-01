@@ -24,18 +24,19 @@ class Stories
   
   def self.fight
     Story.named("Combat") do
+      initially :hp => 10, :attack => 6, :defence => 3
+
       situation(:start) do
         description "A fight will begin!!"
 
-        context :hp => 10, :attack => 6, :defence => 3
         free_text :anything
         transition :any => :fight
       end
 
       situation(:fight) do
-        description "You are fighting"
+        description "You are fighting. You have {{hp}} of HP."
 
-        combat_with "Goblin", :hp => 10, :attack => 5, :defence => 2
+        combat "Goblin", :hp => 10, :attack => 5, :defence => 2
 
         transition :win => :winner,
                    :lose => :looser

@@ -3,7 +3,7 @@ class Adventure
   def initialize(story)
     @situations = story.situations    
     @current = :start
-    @context = {}
+    @context = story.initial_context
   end
   
   def while_not_finished

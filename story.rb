@@ -1,10 +1,11 @@
 class Story
 
-  attr_reader :name, :situations
+  attr_reader :name, :situations, :initial_context
 
   def initialize(name)
     @name = name
     @situations = {}
+    @initial_context = {}
   end
 
   def self.named(name, &blk)
@@ -19,6 +20,9 @@ class Story
     @situations[id] = builder.situation
   end
 
+  def initially(context)
+    @initial_context = context
+  end
 
 end
 
@@ -36,6 +40,10 @@ class SituationBuilder
     @resolver = Select.options(opts)
   end
 
+  def combat(enemy, enemy_stats)
+    
+  end
+
   def transition(transitions)
     @transitions = transitions    
   end
@@ -43,4 +51,5 @@ class SituationBuilder
   def situation
     Situation.new(@description, @resolver, @transitions)
   end
+
 end
