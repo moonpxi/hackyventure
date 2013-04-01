@@ -1,6 +1,6 @@
 class Stories
 
-  def self.dsl_loop
+  def self.loop
     Story.named("Fancy DSL for looping") do
       situation(:start) do
         description "What is your name?" 
@@ -25,8 +25,36 @@ class Stories
   def self.fight
     Story.named("Combat") do
       situation(:start) do
-        description "Fight will begin!!"
+        description "A fight will begin!!"
+
+        context :hp => 10, :attack => 6, :defence => 3
+        free_text :anything
+        transition :any => :fight
       end
+
+      situation(:fight) do
+        description "You are fighting"
+
+        combat_with "Goblin", :hp => 10, :attack => 5, :defence => 2
+
+        transition :win => :winner,
+                   :lose => :looser
+      end
+
+      situation(:winner) do
+        description "You won! :)"
+        
+        free_text :anything
+        transition :any => :end
+      end
+
+      situation(:looser) do
+        description "You lost... :("
+        
+        free_text :anything
+        transition :any => :end
+      end
+
     end
   end
   

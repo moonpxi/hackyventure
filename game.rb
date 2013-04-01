@@ -11,7 +11,7 @@ require_relative "select"
 
 Scribe.header "Hackyventure 0.42.35"
 
-adventure = Adventure.new(Stories.dsl_loop)
+adventure = Adventure.new(Stories.fight)
 
 adventure.while_not_finished do |situation|
   Scribe.describe situation
