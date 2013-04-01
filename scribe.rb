@@ -21,4 +21,8 @@ class Scribe
     return gets.chomp
   end
 
+  def self.tell(message)
+    puts message
+  end
+
 end
