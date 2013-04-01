@@ -13,7 +13,7 @@ class Situation
   end
 
   def resolve_with(action)
-    resolution = @action_resolver.resolve(action)
+    resolution = @action_resolver.resolve(action, @context)
 
     return { :next => @next_situations[resolution.next], 
              :context => resolution.context } 

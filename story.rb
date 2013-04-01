@@ -41,7 +41,7 @@ class SituationBuilder
   end
 
   def combat(enemy, enemy_stats)
-    
+    @resolver = Combat.new(enemy, enemy_stats)
   end
 
   def transition(transitions)

@@ -39,7 +39,8 @@ class Stories
         combat "Goblin", :hp => 10, :attack => 5, :defence => 2
 
         transition :win => :winner,
-                   :lose => :looser
+                   :lose => :looser,
+                   :fight => :fight
       end
 
       situation(:winner) do

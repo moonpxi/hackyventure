@@ -8,7 +8,7 @@ class FreeTextEntry
     self.new(key)
   end
 
-  def resolve(action)
+  def resolve(action, context)
     Resolution.new(:any, @key => action)
   end
 

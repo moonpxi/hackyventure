@@ -10,7 +10,7 @@ class Select
     self.new(options)
   end
 
-  def resolve(action)
+  def resolve(action, context)
     selected = @options.key?(action.downcase) ? action.downcase : :other
     Resolution.new(@options[selected])
   end

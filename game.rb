@@ -7,6 +7,7 @@ require_relative "stories"
 require_relative "resolution"
 require_relative "free_text_entry"
 require_relative "select"
+require_relative "combat"
 
 
 Scribe.header "Hackyventure 0.42.35"
