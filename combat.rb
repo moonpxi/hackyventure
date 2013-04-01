@@ -12,11 +12,12 @@ class Combat
     @hp -= fight(@enemy, @attack, context[:defence])
 
 
-    resolution = :fight
-    if your_hp <= 0
-      resolution = :lose
+    resolution = if your_hp <= 0
+      :lose
     elsif @hp <= 0
-      resolution = :win
+      :win
+    else
+      :fight
     end
 
     Resolution.new(resolution, :hp => your_hp)
