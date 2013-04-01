@@ -34,9 +34,9 @@ class Stories
       end
 
       situation(:fight) do
-        description "You are fighting. You have {{hp}} of HP."
+        description "You are fighting. You have {{hp}} of HP. Goblin have {{enemy_hp}}."
 
-        combat "Goblin", :hp => 10, :attack => 5, :defence => 2
+        combat "Goblin", :hp => 8, :attack => 5, :defence => 2
 
         transition :win => :winner,
                    :lose => :looser,

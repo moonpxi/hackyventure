@@ -20,7 +20,7 @@ class Combat
       :fight
     end
 
-    Resolution.new(resolution, :hp => your_hp)
+    Resolution.new(resolution, :hp => your_hp, :enemy_hp => @hp)
   end
 
  private
