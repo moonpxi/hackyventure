@@ -1,6 +1,7 @@
 require_relative 'scribe'
 require_relative 'story'
 require_relative 'scene'
+require_relative 'story_runner'
 
 
 
@@ -24,7 +25,13 @@ story.add_scene(:end,
 story.add_scene(:dead,
                 Scene.new('The End, you died.', nil))
 
+
+runner = StoryRunner.new(story, :intro)
+runner.play
+
+
 Scribe.header "Hackyventure/SCENE 0.13.98"
+
 
 Scribe.tell(story.scene(:intro).description)
 Scribe.tell(story.scene(:end).description)
